@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeDojo Daily</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">⚡ CodeDojo</h2>
+        <p class="subtitle">DAILY DEBUG DERBY</p>
+
+        <nav>
+            <a class="active" href="#">🏠 Dashboard</a>
+            <a href="#challenge">💻 Daily Challenge</a>
+            <a href="#teams">👥 My Team</a>
+            <a href="#leaderboard">🏆 Leaderboard</a>
+            <a href="#streak">🔥 My Streak</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Akshara</strong>
+                    <small>Code Warrior</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Ready to debug, compete, and conquer today?</p>
+            </div>
+            <div class="date" id="currentDate"></div>
+        </header>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat-card">
+                <p>Problems Solved</p>
+                <h2 id="solvedCount">12</h2>
+                <span>Keep learning!</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Current Streak</p>
+                <h2>🔥 <span id="streakCount">5</span> Days</h2>
+                <span>You're on fire!</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Total Points</p>
+                <h2 id="points">240</h2>
+                <span>XP earned</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Team Rank</p>
+                <h2 id="teamRank">#3</h2>
+                <span>Squad ranking</span>
+            </div>
+        </section>
+
+        <!-- Daily Challenge -->
+        <section class="challenge" id="challenge">
+            <div class="challenge-info">
+                <div class="challenge-top">
+                    <span class="badge">⚡ DAILY CHALLENGE</span>
+                    <span class="difficulty">Easy</span>
+                </div>
+
+                <h2>Two Sum</h2>
+
+                <p>
+                    Given an array of integers and a target number,
+                    find two different numbers whose sum equals the target.
+                </p>
+
+                <div class="tags">
+                    <span>Arrays</span>
+                    <span>Hash Maps</span>
+                    <span>Algorithms</span>
+                </div>
+
+                <div class="challenge-meta">
+                    <span>⏱ 15 min</span>
+                    <span>⭐ 100 Points</span>
+                </div>
+
+                <button class="primary-btn" onclick="scrollToEditor()">
+                    Solve Challenge →
+                </button>
+            </div>
+
+            <div class="challenge-visual">
+                <div class="code-icon">⌨️</div>
+                <div class="floating-card">[ 2, 7, 11, 15 ]</div>
+                <div class="floating-card second">Target = 9</div>
+            </div>
+        </section>
+
+        <!-- Workspace -->
+        <section class="workspace" id="editor">
+            <div class="section-heading">
+                <div>
+                    <h2>Code Workspace</h2>
+                    <p>Write your solution and test it</p>
+                </div>
+            </div>
+
+            <div class="editor-box">
+                <div class="editor-header">
+                    <span>📝 solution.js</span>
+
+                    <select id="language">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                    </select>
+                </div>
+
+                <textarea id="codeEditor" spellcheck="false">function twoSum(nums, target) {
+    // Write your solution here
+    return [];
+}
+
+console.log(twoSum([2, 7, 11, 15], 9));</textarea>
+
+                <div class="editor-actions">
+                    <button class="secondary-btn" onclick="resetCode()">↺ Reset</button>
+                    <button class="secondary-btn" onclick="runTests()">▶ Run Tests</button>
+                    <button class="primary-btn" onclick="submitCode()">🚀 Submit Solution</button>
+                </div>
+            </div>
+
+            <!-- Test Results -->
+            <div class="test-results">
+                <h3>Test Results</h3>
+                <div id="testOutput">
+                    <p class="empty-result">Run your code to see test results.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team + Leaderboard -->
+        <section class="bottom-grid">
+
+            <div class="panel" id="teams">
+                <div class="section-heading">
+                    <div>
+                        <h2>My Squad</h2>
+                        <p>Your coding teammates</p>
+                    </div>
+                    <button class="small-btn" onclick="createTeam()">+ Create Team</button>
+                </div>
+
+                <div class="team-banner">
+                    <div class="team-avatar">🐉</div>
+                    <div>
+                        <h3 id="teamName">Binary Beasts</h3>
+                        <p>4 Members · Level 8</p>
+                    </div>
+                </div>
+
+                <div class="members">
+                    <div class="member">
+                <div class="member-avatar">A</div>
+                <span>Akshara</span>
+                <span class="member-score">240 XP</span>
+            </div>
+                    <div class="member">
+                        <div class="member-avatar blue">R</div>
+                        <span>Rahul</span>
+                        <span class="member-score">310 XP</span>
+                    </div>
+                    <div class="member">
+                        <div class="member-avatar pink">S</div>
+                        <span>Sneha</span>
+                        <span class="member-score">180 XP</span>
+                    </div>
+                    <div class="member">
+                        <div class="member-avatar orange">V</div>
+                        <span>Varun</span>
+                        <span class="member-score">150 XP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel" id="leaderboard">
+                <div class="section-heading">
+                    <div>
+                        <h2>Team Leaderboard</h2>
+                        <p>Top squads today</p>
+                    </div>
+                    <span class="live">● LIVE</span>
+                </div>
+
+                <div class="leader-row first">
+                    <span>🥇</span>
+                    <strong>Code Crushers</strong>
+                    <span class="leader-score">1280 XP</span>
+                </div>
+
+                <div class="leader-row second">
+                    <span>🥈</span>
+                    <strong>Bug Hunters</strong>
+                    <span class="leader-score">1120 XP</span>
+                </div>
+
+                <div class="leader-row third" id="myTeamRow">
+                    <span>🥉</span>
+                    <strong>Binary Beasts</strong>
+                    <span class="leader-score" id="teamScore">880 XP</span>
+                </div>
+
+                <div class="leader-row">
+                    <span>4</span>
+                    <strong>Logic Legends</strong>
+                    <span class="leader-score">760 XP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Streak Calendar -->
+        <section class="panel streak-panel" id="streak">
+            <div class="section-heading">
+                <div>
+                    <h2>🔥 Coding Streak</h2>
+                    <p>Your weekly coding activity</p>
+                </div>
+            </div>
+
+            <div class="streak-calendar" id="calendar">
+            </div>
+
+            <p class="streak-message">Consistency beats perfection. Keep coding every day! 💪</p>
+        </section>
+
+        <footer>
+            <p>⚡ CodeDojo Daily · DailyDebug Derby · Keep coding, keep growing.</p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
